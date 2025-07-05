@@ -1,0 +1,21 @@
+---
+- name: Install packages
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - docker
+    - curl
+
+- name: Configure CloudWatch agent
+  template:
+    src: cloudwatch.conf.j2
+    dest: /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+
+- name: Apply SSH configuration
+  copy:
+    src: ssh_config
+    dest: /etc/ssh/sshd_config
+    backup: yes
+  notify: Restart SSH

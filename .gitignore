@@ -1,0 +1,36 @@
+# Ansible and OS artifacts
+*.retry
+*.log
+*.swp
+*.swo
+*.bak
+
+# SSH credentials and secrets (if not managed via vault)
+*.pem
+*.key
+
+# Ansible Vault files (if used)
+vault.yml
+
+# Python virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+
+# VSCode and editor settings
+.vscode/
+*.code-workspace
+
+# Terraform leftovers (if this repo includes TF for completeness)
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+*.tfplan
+*.tfvars.backup
+
+# Misc
+.DS_Store
+.idea/

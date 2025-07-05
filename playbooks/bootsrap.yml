@@ -1,0 +1,6 @@
+---
+- name: Bootstrap EKS nodes
+  hosts: eks_nodes
+  become: true
+  roles:
+    - bootstrap

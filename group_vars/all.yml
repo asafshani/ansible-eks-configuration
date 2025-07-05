@@ -1,0 +1,2 @@
+cloudwatch_log_group: "/eks/app/logs"
+monitoring_tools: ["node-exporter"]
